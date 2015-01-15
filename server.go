@@ -97,8 +97,8 @@ func (u *Upgrader) Upgrade(w http.ResponseWriter, r *http.Request, responseHeade
 		return u.returnError(w, r, http.StatusBadRequest, "websocket: version != 13")
 	}
 
-	if !tokenListContainsValue(r.Header, "Connection", "upgrade") {
-		return u.returnError(w, r, http.StatusBadRequest, "websocket: connection header != upgrade")
+	if !tokenListContainsValue(r.Header, "Connection", "Upgrade") {
+		return u.returnError(w, r, http.StatusBadRequest, "websocket: connection header != Upgrade")
 	}
 
 	if !tokenListContainsValue(r.Header, "Upgrade", "websocket") {
